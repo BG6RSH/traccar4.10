@@ -217,6 +217,8 @@ public class Position extends Message {
     }
 
     private double latitude;
+    private double latitude_bd09;
+    private double latitude_gcj02;
 
     public double getLatitude() {
         return latitude;
@@ -225,15 +227,51 @@ public class Position extends Message {
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
+    public void setLatitude_bd09(double latitude_bd09) {
+        this.latitude_bd09 = latitude_bd09;
+    }
+    public void setLatitude_gcj02(double latitude_gcj02) {
+        this.latitude_gcj02 = latitude_gcj02;
+    }
 
     private double longitude;
+    private double longitude_bd09;
+    private double longitude_gcj02;
 
     public double getLongitude() {
         return longitude;
     }
+    public double getLongitude_bd09() {
+        return longitude_bd09;
+    }
+    public double getLongitude_gcj02() {
+        return longitude_gcj02;
+    }
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+        setloned = true;
+        setPosition();
+    }
+    private boolean setloned = false, setlated = false; // 经\纬度被赋值标志
+    private void setPosition() {
+        if(setlated && setloned) {   //  经纬度都被赋值后，就转换成GCJ02、BD09
+            double pos_gcj02[] = GpsCoordinateUtils.calWGS84toGCJ02(latitude, longitude);
+            double pos_bd09[]  = GpsCoordinateUtils.calWGS84toBD09(latitude, longitude);
+            setLatitude_gcj02( pos_gcj02[0]);
+            setLongitude_gcj02(pos_gcj02[1]);
+
+            setLatitude_bd09( pos_bd09[0]);
+            setLongitude_bd09(pos_bd09[1]);
+            setlated = false;
+            setloned = false;
+        }
+    }
+    public void setLongitude_bd09(double longitude_bd09) {
+        this.longitude_bd09 = longitude_bd09;
+    }
+    public void setLongitude_gcj02(double longitude_gcj02) {
+        this.longitude_gcj02 = longitude_gcj02;
     }
 
     private double altitude; // value in meters

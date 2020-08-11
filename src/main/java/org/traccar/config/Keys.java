@@ -377,13 +377,13 @@ public final class Keys {
             "geolocation.url", String.class);
 
     /**
-     * Provider API key. OpenCellID service requires API key.
+     * Provider API key. OpenCellID service requires API key.提供程序API密钥。OpenCellID服务需要API密钥。
      */
     public static final ConfigKey GEOLOCATION_KEY = new ConfigKey(
             "geolocation.key", String.class);
 
     /**
-     * Boolean flag to apply geolocation to invalid positions.
+     * Boolean flag to apply geolocation to invalid positions.将地理位置应用于无效位置的布尔标志
      */
     public static final ConfigKey GEOLOCATION_PROCESS_INVALID_POSITIONS = new ConfigKey(
             "geolocation.processInvalidPositions", Boolean.class);

@@ -12,6 +12,48 @@
       <column name="protocols" type="VARCHAR(4096)" />
     </addColumn>
 
+    <addColumn tableName="tc_positions">
+      <column name="latitude_gcj02" type="DOUBLE"/>
+    </addColumn>
+    <addColumn tableName="tc_positions">
+      <column name="longitude_gcj02" type="DOUBLE"/>
+    </addColumn>
+
+    <addColumn tableName="tc_positions">
+      <column name="latitude_bd09" type="DOUBLE"/>
+    </addColumn>
+    <addColumn tableName="tc_positions">
+      <column name="longitude_bd09" type="DOUBLE"/>
+    </addColumn>
+
+    <addColumn tableName="tc_servers">
+      <column name="latitude_gcj02" type="DOUBLE"/>
+    </addColumn>
+    <addColumn tableName="tc_servers">
+      <column name="longitude_gcj02" type="DOUBLE"/>
+    </addColumn>
+
+    <addColumn tableName="tc_servers">
+      <column name="latitude_bd09" type="DOUBLE"/>
+    </addColumn>
+    <addColumn tableName="tc_servers">
+      <column name="longitude_bd09" type="DOUBLE"/>
+    </addColumn>
+
+    <addColumn tableName="tc_users">
+      <column name="latitude_gcj02" type="DOUBLE"/>
+    </addColumn>
+    <addColumn tableName="tc_users">
+      <column name="longitude_gcj02" type="DOUBLE"/>
+    </addColumn>
+
+    <addColumn tableName="tc_users">
+      <column name="latitude_bd09" type="DOUBLE"/>
+    </addColumn>
+    <addColumn tableName="tc_users">
+      <column name="longitude_bd09" type="DOUBLE"/>
+    </addColumn>
+
   </changeSet>
 
 </databaseChangeLog>
